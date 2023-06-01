@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site.language_attributes }} ">
+  <head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    {{ function('wp_head') }}
+	<link rel="stylesheet" href="/crc-wordpress/wp-content/themes/Timber-theme/dist/css/style.css">
+    <title>{% block title  '' %}</title>
+  </head>
+  <body>
+    <div class="row justify-content-center">
+      <div class="col-8 col-md-6 col-xl-8 mt-4">
+         {% block content '' %}
+      </div>
+    </div>
+  </body>
+  {{ function('wp_footer')}}
+</html>

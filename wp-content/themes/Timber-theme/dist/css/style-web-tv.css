@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/**
+ * Default color
+ */
+/**
+ * Custom Variables used in our SCSS
+ */
+/* Button */
+/**
+ * BOOSTED or BOOTSTRAP overwrite variables
+ */
+/* Spacer utilities, used for helpers on padding and margin for instance */
+/**
+ * Buttons
+ */
+/**
+ * Typography
+ * Those are a mix of Bootstrap, Boosted and custom used variables :/
+ */
+/* Typography configuration for mobile (xs and sm) */
+/* Typography configuration for tablet and small desktop (md, lg) */
+/* widescreen variables aren't part of bootstrap, they are used in our custom scss */
+/* following colors are named after the ui-kit in order to be used in functions or properties as it */
+/* functional icons */
+/**
+ * Function to transform a size in px to rem based on the browser-fs value
+  * @param $size-in-px size in pixel to transform
+ */
+.ob1-panel {
+  height: 100%;
+}
+
+.ob1-panel:hover .ob1-panel-img, .ob1-panel.focus-within .ob1-panel-img {
+  transition: transform .3s;
+  transition-timing-function: ease-out, cubic-bezier(0.33, 1, 0.68, 1);
+  transform: scale(1.05);
+}
+
+.ob1-panel.focus-within {
+  outline: 0.125rem solid #f16e00;
+}
+
+.ob1-panel:focus-within {
+  outline: 0.125rem solid #f16e00;
+}
+
+.ob1-panel:focus-within .ob1-panel-img {
+  transition: transform .3s;
+  transition-timing-function: ease-out, cubic-bezier(0.33, 1, 0.68, 1);
+  transform: scale(1.05);
+}
+
+.ob1-panel .ob1-panel-mask {
+  position: relative;
+  overflow: hidden;
+}
+
+.ob1-panel .ob1-panel-mask::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.5));
+}
+
+.ob1-panel .ob1-panel-mask .ob1-panel-logo,
+.ob1-panel .ob1-panel-mask .ob1-panel-csa {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.ob1-panel .ob1-panel-mask .ob1-panel-logo {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.ob1-panel .ob1-panel-mask .ob1-panel-csa {
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.ob1-panel .ob1-panel-mask .ob1-panel-img {
+  width: 100%;
+  transition: transform .15s;
+  transition-timing-function: ease-in, cubic-bezier(0.32, 0, 0.67, 0);
+}
+
+.ob1-panel .ob1-panel-body {
+  padding-top: 0.3125rem;
+}
+
+.ob1-panel .ob1-panel-body .ob1-panel-title {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  line-height: 1.428571429;
+}
+
+.ob1-panel .ob1-panel-body .ob1-panel-title a {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.ob1-panel .ob1-panel-body .ob1-panel-title a:focus {
+  outline: none;
+}
+
+.ob1-panel .ob1-panel-body .ob1-panel-text {
+  padding-top: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.ob1-panel.ob1-panel-inverse .ob1-panel-body .ob1-panel-title a,
+.ob1-panel.ob1-panel-inverse .ob1-panel-body .ob1-panel-text {
+  color: #fff;
+}
+
+.ob1-panel.ob1-panel-inverse:hover .ob1-panel-title a,
+.ob1-panel.ob1-panel-inverse:hover .ob1-panel-text, .ob1-panel.ob1-panel-inverse:focus .ob1-panel-title a,
+.ob1-panel.ob1-panel-inverse:focus .ob1-panel-text, .ob1-panel.ob1-panel-inverse:focus-within .ob1-panel-title a,
+.ob1-panel.ob1-panel-inverse:focus-within .ob1-panel-text, .ob1-panel.ob1-panel-inverse.focus-within .ob1-panel-title a,
+.ob1-panel.ob1-panel-inverse.focus-within .ob1-panel-text {
+  color: #ccc;
+}
+
+.ob1-csa-10::before {
+  font-family: icon-orange, sans-serif;
+  content: "";
+}
+
+.ob1-csa-12::before {
+  font-family: icon-orange, sans-serif;
+  content: "";
+}
+
+.ob1-csa-16::before {
+  font-family: icon-orange, sans-serif;
+  content: "";
+}
+
+.ob1-csa-18::before {
+  font-family: icon-orange, sans-serif;
+  content: "";
+}
+
+@media (min-width: 736px) {
+  .ob1-panel .ob1-panel-mask .ob1-panel-logo {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-bottom: 16px;
+  }
+  .ob1-panel .ob1-panel-mask .ob1-panel-csa {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .ob1-panel .ob1-panel-body {
+    padding-top: 0.625rem;
+  }
+  .ob1-panel .ob1-panel-body .ob1-panel-title {
+    font-size: 1rem;
+    line-height: 1.375;
+  }
+  .ob1-panel .ob1-panel-body .ob1-panel-text {
+    font-size: 0.875rem;
+    line-height: 1.428571429;
+  }
+}
+/*# sourceMappingURL=style-web-tv.css.map */

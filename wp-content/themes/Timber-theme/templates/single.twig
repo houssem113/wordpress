@@ -1,0 +1,82 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
+			<section class="article-content">
+				<h1 class="article-h1">{{ post.title }}</h1>
+				<p class="blog-author">
+					<span>By</span>
+					<a href="{{post.author.path}}">
+						{{ post.author.name }}
+					</a>
+					<span>&bull;</span>
+					<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+				</p>
+				<p>Partenaire : {{ post.terms( {query:{taxonomy:'category', orderby:'name', order: 'ASC'}} )|join(', ') }}</p>
+				{% for term in post.terms('tags') %}
+					<p>Category : {{term.name}}</p>
+				{% endfor %}
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div>
+	<!-- /content-wrapper -->
+	<hr class="separator separator--gray4 mt-2 mt-lg-3">
+	<section>
+		<div class="crc-clip-maincontent" itemscope="" itemtype="https://schema.org/TechArticle">
+			<meta itemprop="name" content="Décodeur : brancher votre équipement">
+			<div>
+				<div class="row crc-faq-instructions">
+					<div class="col-12">
+						<div class="standard crc-tmsZone" data-zone_name="aec_faq_centre_de_page">
+							<div class="row d-md-block"></div>
+							<div class="row">
+								<div class="col-12">
+									<table class="crc-Table--responsive table" border="0" cellpadding="2" cellspacing="0" width="100%" style="width: 100%;
+										        " summary="none">
+										<tbody>
+											<tr class="first_line table_step_line">
+												<td valign="top" style="vertical-align: top;" class="pt-0 pr-1 pl-0">
+													<div id="zoom_3jjk" class="crc-zoom-div-img" aria-hidden="true" data-toggle="modal" data-target="#popin_3jjk">
+														<img src="{{ Image(post.image).src  }}" 
+															class="parcours_scripte w-75" 
+															data-imgsrc-nozoom="false" 
+															data-imgsrc-zoom-0-large="{{ Image(post.image).src  }}">
+													</div>
+												</td>
+												<td valign="top" style="vertical-align: top;">
+													<h5 class="h4">{{ post.titre }}</h5>
+													<p></p>
+													<p>{{ post.paragraphe | raw }}</p>
+												</td>
+											</tr>
+											<tr class="table_step_line">
+												<td valign="top" style="vertical-align: top;" class="pt-0 pr-1 pl-0">
+													<div id="zoom_3jjk" class="crc-zoom-div-img " aria-hidden="true" data-toggle="modal" data-target="#popin_3jjk">
+														<img src="{{ Image(post.image_2).src  }}" 
+															class="parcours_scripte w-75" 
+															data-imgsrc-nozoom="false" 
+															data-imgsrc-zoom-0-large="{{ Image(post.image_2).src  }}">
+													</div>
+												</td>
+												<td valign="top" style="vertical-align: top;">
+													<h5 class="h4">{{ post.titre_2 }}</h5>
+													<p>{{ post.paragraphe_2 | raw }}</p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+{% endblock %}

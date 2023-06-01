@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	
+	{% for post in posts %}
+	
+		<div class="row">
+			<a class="col-12 col-md-6 col-xl-12" href="{{post.link}}">
+				<div class="ob1-card p-1">
+				<h3 class="mb-0">{{post.title}}</h3>
+				<p class="mb-0">
+					<span>{{ (post.content | length > 50) ? (post.content | slice(0, 50) ~ '...') : post.content }}</span>
+				</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+	
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}

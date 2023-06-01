@@ -1,0 +1,10 @@
+vendor/
+.htaccess
+wp-config.php
+wp-content/*
+!wp-content/themes/
+!wp-content/plugins/
+sitemap.xml
+*.log
+sitemap.xml
+sitemap.xml.gz
